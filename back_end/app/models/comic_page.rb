@@ -1,5 +1,6 @@
 class ComicPage < ApplicationRecord
-    belongs_to: comic
-    has_many: page_comments
-    has_many: users, through: page_comments
+    belongs_to :comic
+    has_many :comments
+    has_many :comments, as: :commentable
+    has_one_attached :image
 end
